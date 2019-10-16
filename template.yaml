@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: Amazon Alexa Aludra Skill
+
+Globals:
+  Function:
+    Timeout: 7
+
+Resources:
+  AludraSkillFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs10.x
+      CodeUri: .
+      Description: Amazon Alexa Aludra Skill
+      Events:
+        AlexaSkillEvent:
+          Type: AlexaSkill

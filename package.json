@@ -1,0 +1,26 @@
+{
+  "name": "aludra-skill",
+  "version": "1.0.0",
+  "description": "Amazon Alexa Aludra Skill",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "invoke": "sam local invoke -e event.json -d 5858",
+    "build": "sam build",
+    "package": "sam package --s3-bucket fn-build-artifacts --output-template-file package.yaml",
+    "deploy": "sam deploy --template-file package.yaml --stack-name aludra-skill --region us-west-2 --capabilities CAPABILITY_IAM",
+    "deploy-lambda": "npm run build && npm run package && npm run deploy"
+  },
+  "author": "Omar Mejia",
+  "license": "ISC",
+  "dependencies": {
+    "ask-sdk": "^2.7.0",
+    "axios": "^0.18.1",
+    "i18next": "^17.0.9",
+    "i18next-sprintf-postprocessor": "^0.2.2",
+    "number-to-words": "^1.2.4"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0"
+  }
+}
