@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "ask-sdk": "^2.7.0",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "i18next": "^17.0.9",
     "i18next-sprintf-postprocessor": "^0.2.2",
     "number-to-words": "^1.2.4"
